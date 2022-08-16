@@ -65,11 +65,6 @@ void loop()
 
   if(incomingData.indexOf("Location")>=0)
   {
-    digitalWrite(relay_pin, HIGH);
-    message = "Led is turned OFF";
-    // Send a sms back to confirm that the relay is turned off
-    send_message(message);
-
   Serial.begin(9600);
   SIM900.begin(9600);
   delay(3000);
