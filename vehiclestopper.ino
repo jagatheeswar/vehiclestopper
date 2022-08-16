@@ -156,7 +156,6 @@ void prepare_message()
   for(int i=second_comma+1; i<third_comma; i++)
     Latitude = Latitude + responce.charAt(i);
 
-  Serial.println(Latitude); Serial.println(Longitude);
   Link = Link + Latitude + "," +Longitude;
   send_message(Link);
 }
