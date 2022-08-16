@@ -45,21 +45,21 @@ void loop()
   //Function for receiving sms
   receive_message();
 
-  // if received command is to turn on relay
-  if(incomingData.indexOf("Off")>=0)
+  // if received command is to turn on bike
+  if(incomingData.indexOf("on")>=0)
   {
     digitalWrite(relay_pin, LOW);
-    message = "Led is turned ON";
-    // Send a sms back to confirm that the relay is turned on
+    message = "bike is turned ON";
+    // Send a sms back to confirm that the relay is turned off
     send_message(message);
   }
   
   // if received command is to turn off relay
-  if(incomingData.indexOf("On")>=0)
+  if(incomingData.indexOf("off")>=0)
   {
     digitalWrite(relay_pin, HIGH);
-    message = "Led is turned OFF";
-    // Send a sms back to confirm that the relay is turned off
+    message = "bike is turned OFF";
+    // Send a sms back to confirm that the bike is turned off
     send_message(message);
   }
 
