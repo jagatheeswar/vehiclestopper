@@ -115,18 +115,6 @@ responce = SIM900_send("AT+SAPBR=3,1,\"APN\",\"RCMNET\" "); //set vpn options
       Serial.print("Result Obtained as:");
 
       prepare_message(); delay(1000);
-
-      SIM900.println("AT+CMGF=1"); //set the module in sms mode
-      delay(1000);
-
-      SIM900.println("AT+CMGS=\"6381698218\"");
-      delay(1000);
-
-SIM900.println(Link);
-      delay(1000);
-
-      SIM900.println((char)26);//ascii code of ctrl+z
-    delay(1000);
   }
           
 }
