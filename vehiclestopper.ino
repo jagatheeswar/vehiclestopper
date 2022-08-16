@@ -105,7 +105,7 @@ responce = SIM900_send("AT+SAPBR=3,1,\"APN\",\"RCMNET\" "); //set vpn options
       delay (1000);
 
       responce = ""; Latitude = "";
-      SIM900.println("AT+CLBS=1,1");
+      SIM900.println("AT+CLBS=1,1");  //long,lat
       delay(5000);
         while (SIM900.available()){
           char letter = SIM900.read();
@@ -170,6 +170,5 @@ void prepare_message()
 
   Serial.println(Latitude); Serial.println(Longitude);
   Link = Link + Latitude + "," +Longitude;
-  Serial.println(Link);
-  
+  send_message(Link);
 }
