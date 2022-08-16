@@ -87,12 +87,6 @@ responce = SIM900_send("AT+SAPBR=3,1,\"APN\",\"RCMNET\" "); //set vpn options
  responce = SIM900_send("AT+SAPBR=2,1"); //get the ip adress of the bearer profile
   delay(1000);
 
-     Serial.println ("sending sms"); delay(1000);
-      responce = SIM900_send("ATH");
-      delay(1000);
-      responce = SIM900_send("ATE0");
-      delay (1000);
-
       responce = ""; Latitude = "";
       SIM900.println("AT+CLBS=1,1");  //long,lat
       delay(5000);
