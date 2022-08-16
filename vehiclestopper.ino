@@ -1,5 +1,5 @@
 #include <SoftwareSerial.h> // Library for using serial communication
-SoftwareSerial SIM900(2,3); // Pins 7, 8 are used as used as software serial pins
+SoftwareSerial SIM900(2,3); // Pins 2, 3 are used as used as software serial pins
 
 String incomingData;   // for storing incoming serial data
 String message = "";   // A String for storing the message
