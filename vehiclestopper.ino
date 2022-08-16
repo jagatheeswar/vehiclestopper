@@ -75,27 +75,21 @@ void loop()
   delay(3000);
 
   responce = SIM900_send("ATE1");  //enable echo if not enabled by default
-  Serial.print ("Responce:");
   delay(1000);
 
   responce = SIM900_send("AT+CGATT=1"); //set the sim 800 in gprs mode
-  Serial.print ("Responce:");
   delay(1000);
 
   responce = SIM900_send("AT+SAPBR=3,1,\"CONTYPE\",\"GPRS\" "); ///activate bearer profile
-  Serial.print ("Responce:"); Serial.println ("Responce:");
   delay(2000);
 
 responce = SIM900_send("AT+SAPBR=3,1,\"APN\",\"RCMNET\" "); //set vpn options 
-  Serial.print ("Responce:"); Serial.println ("Responce:");
   delay(2000);
 
  responce = SIM900_send("AT+SAPBR=1,1"); //open bearer profile
-  Serial.print ("Responce:"); Serial.println ("Responce:");
   delay(2000);
 
  responce = SIM900_send("AT+SAPBR=2,1"); //get the ip adress of the bearer profile
-  Serial.print ("Responce:"); Serial.println ("Responce:");
   delay(1000);
 
      Serial.println ("sending sms"); delay(1000);
@@ -113,10 +107,8 @@ responce = SIM900_send("AT+SAPBR=3,1,\"APN\",\"RCMNET\" "); //set vpn options
           
         }
       Serial.print("Result Obtained as:");
-
       prepare_message(); delay(1000);
-  }
-          
+  } 
 }
 
 void receive_message()
@@ -149,9 +141,8 @@ void prepare_message()
 
   int third_comma = responce.indexOf(',', second_comma+1); //3rd comma
 
-  for(int i=first_comma+1; i<second_comma; i++){
+  for(int i=first_comma+1; i<second_comma; i++)
     Longitude = Longitude + responce.charAt(i);
-  }
 
   for(int i=second_comma+1; i<third_comma; i++)
     Latitude = Latitude + responce.charAt(i);
